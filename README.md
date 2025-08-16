@@ -1,24 +1,24 @@
-# Chris Titus Tech's Linux Utility
+# PINONITE's Linux Utility
 
-[![Version](https://img.shields.io/github/v/release/ChrisTitusTech/linutil?color=%230567ff&label=Latest%20Release&style=for-the-badge)](https://github.com/ChrisTitusTech/linutil/releases/latest)
-![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/ChrisTitusTech/linutil/linutil?label=Total%20Downloads&style=for-the-badge)
+[![Version](https://img.shields.io/github/v/release/NikolasP98/linuxutil?color=%230567ff&label=Latest%20Release&style=for-the-badge)](https://github.com/NikolasP98/linuxutil/releases/latest)
+![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/NikolasP98/linuxutil/linutil?label=Total%20Downloads&style=for-the-badge)
 [![Crates.io Version](https://img.shields.io/crates/v/linutil_tui?style=for-the-badge&color=%23af3a03)](https://crates.io/crates/linutil_tui)
 ![Preview](/.github/preview.gif)
 
 **Linutil** is a distro-agnostic toolbox designed to simplify everyday Linux tasks. It helps you set up applications and optimize your system for specific use cases. The utility is actively developed in Rust 🦀, providing performance and reliability.
 
 > [!NOTE]
-> Since the project is still in active development, you may encounter some issues. Please consider [submitting feedback](https://github.com/ChrisTitusTech/linutil/issues) if you do.
+> Since the project is still in active development, you may encounter some issues. Please consider [submitting feedback](https://github.com/NikolasP98/linuxutil/issues) if you do.
 
 ## 💡 Usage
 To get started, pick which branch you would like to use, then run the command in your terminal:
 ### Stable Branch (Recommended)
 ```bash
-curl -fsSL https://christitus.com/linux | sh
+curl -fsSL https://raw.githubusercontent.com/NikolasP98/linuxutil/main/start.sh | sh
 ```
 ### Dev branch
 ```bash
-curl -fsSL https://christitus.com/linuxdev | sh
+curl -fsSL https://raw.githubusercontent.com/NikolasP98/linuxutil/main/startdev.sh | sh
 ```
 
 ### CLI arguments
@@ -32,7 +32,7 @@ linutil --help
 For installer options:
 
 ```bash
-curl -fsSL https://christitus.com/linux | sh -s -- --help
+curl -fsSL https://raw.githubusercontent.com/NikolasP98/linuxutil/main/start.sh | sh -s -- --help
 ```
 
 ## ⬇️ Installation
@@ -87,7 +87,7 @@ Linutil can be installed via [Cargo](https://doc.rust-lang.org/cargo) with:
 cargo install linutil_tui
 ```
 
-Note that crates installed using `cargo install` require manual updating with `cargo install --force` (update functionality is [included in LinUtil](https://christitustech.github.io/linutil/userguide/#applications-setup))
+Note that crates installed using `cargo install` require manual updating with `cargo install --force` (update functionality is included in LinUtil)
 
 </details>
 
@@ -124,21 +124,43 @@ If you find Linutil helpful, please consider giving it a ⭐️ to show your sup
 
 ## 🎓 Documentation
 
-For comprehensive information on how to use Linutil, visit the [Linutil Official Documentation](https://chris-titus-docs.github.io/linutil-docs/).
+For comprehensive information on how to use Linutil, visit the documentation in the [docs](./docs) directory.
 
 ## 🛠 Contributing
 
 We welcome contributions from the community! Before you start, please review our [Contributing Guidelines](.github/CONTRIBUTING.md) to understand how to make the most effective and efficient contributions.
 
-[Official LinUtil Roadmap](https://chris-titus-docs.github.io/linutil-docs/roadmap/)
+### Adding New Modules and Folders
 
-Docs are now [here](https://github.com/Chris-Titus-Docs/linutil-docs)
+To add new functionality to Linutil:
+
+1. **Adding Shell Scripts**: Place new shell scripts in the appropriate subdirectory under `core/tabs/`. For example:
+   - Application setup scripts: `core/tabs/applications-setup/`
+   - System setup scripts: `core/tabs/system-setup/`
+   - Utility scripts: `core/tabs/utilities/`
+
+2. **Creating New Categories**: To add a new category of tools:
+   - Create a new subdirectory under `core/tabs/`
+   - Add a `tab_data.toml` file to define the category structure
+   - Follow the existing pattern of other categories
+
+3. **Configuration**: Update the `tab_data.toml` files to include your new scripts:
+   ```toml
+   [[data]]
+   name = "Your Script Name"
+   script = "your-script.sh"
+   description = "Description of what your script does"
+   ```
+
+4. **Testing**: Always test your scripts on different distributions before submitting
+
+For detailed contribution guidelines, see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 
 ## 🏅 Thanks to All Contributors
 
 Thank you to everyone who has contributed to the development of Linutil. Your efforts are greatly appreciated, and you're helping make this tool better for everyone!
 
-[![Contributors](https://contrib.rocks/image?repo=ChrisTitusTech/linutil)](https://github.com/ChrisTitusTech/linutil/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=NikolasP98/linuxutil)](https://github.com/NikolasP98/linuxutil/graphs/contributors)
 
 ## 📜 Contributor Milestones
 
